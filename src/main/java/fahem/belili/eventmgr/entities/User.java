@@ -36,12 +36,11 @@ public class User implements Serializable {
 		// TODO Auto-generated constructor stub
 	}
 
-	public User(String name, String password, boolean activated, Collection<Role> roles) {
+	public User(String name, String password, boolean activated) {
 		super();
 		this.name = name;
 		this.password = password;
 		this.activated = activated;
-		this.roles = roles;
 	}
 
 	public long getId() {
