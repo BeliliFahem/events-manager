@@ -11,4 +11,6 @@ Cette application JEE était personnel puis publiée en open-source dans le plus d
 * JUnit
 * Maven
 * Eclipse JEE IDE
+
+[See Class digram from here](https://github.com/BeliliFahem/events-manager/blob/master/ClassDiagram.png)
  

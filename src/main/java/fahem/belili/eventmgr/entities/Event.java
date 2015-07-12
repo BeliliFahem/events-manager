@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
@@ -33,8 +34,16 @@ public class Event implements Serializable {
 	private Date date;
 	
 	// card
-	@ManyToMany
+	@ManyToMany // participants<-->events
 	private Collection<Participant> participants;
+	
+		
+	/* 
+	many event to one participant. un participant peut créer 0,* events & un event est créé par 1seul participant
+	*/
+	@ManyToOne
+	@NotEmpty
+	private Participant participant;
 
 	public Event() {
 		super();
@@ -86,6 +95,14 @@ public class Event implements Serializable {
 
 	public void setParticipants(Collection<Participant> participants) {
 		this.participants = participants;
+	}
+
+	public Participant getParticipant() {
+		return participant;
+	}
+
+	public void setParticipant(Participant participant) {
+		this.participant = participant;
 	}
 	
 	
